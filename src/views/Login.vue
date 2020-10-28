@@ -7,8 +7,8 @@
       <v-form>
         <v-text-field label="Username" prepend-icon="mdi-account-circle" />
         <v-text-field
-          label="Password"
           :type="showPassword ? 'text' : 'password'"
+          label="Password"
           prepend-icon="mdi-lock"
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
@@ -26,9 +26,13 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "LoginPage",
+  data() {
+    return {
+      showPassword: false,
+    };
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
