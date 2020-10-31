@@ -1,10 +1,19 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
 
-Vue.use(Vuetify)
+import themes from './themes';
+
+Vue.use(Vuetify);
+
+console.log(themes);
 
 export default new Vuetify({
-	icons: {
-		iconfont: 'mdi'
-	}
-})
+  
+	theme: {
+    options: { customProperties: true },
+	// 	themes: {
+  //     light: themes.tumblr,
+  //     dark: themes.tumblr,
+	// 	},
+	},
+});
