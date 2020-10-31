@@ -8,7 +8,7 @@ export default {
 		success: '#4CAF50',
 		warning: '#FFC107',
 	},
-	tumblr: {
+	dark: {
 		primary: '#36465D',
 		secondary: '#2E4B65',
 		accent: '#6F9D4D',

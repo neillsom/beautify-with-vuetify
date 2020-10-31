@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     toggleTheme() {
+      this.$vuetify.theme.themes.dark.anchor = "lightblue";
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
@@ -73,14 +74,14 @@ export default {
 </script>
 
 <style scoped>
-.hello {
+/* .hello {
   height: 200px;
   width: 200px;
   color: var(--v-primary-base);
-  background-color: var(--v-accent-lighten2);
+  background-color: var(--v-accent-lighten3);
   position: absolute;
   top: 70px;
-}
+} */
 #toggle-icon:hover {
   cursor: pointer;
   filter: hue-rotate(100);
