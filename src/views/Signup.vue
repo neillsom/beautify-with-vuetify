@@ -13,12 +13,34 @@
           ></v-text-field>
           <v-autocomplete label="Browser" :items="browsers"></v-autocomplete>
           <v-file-input label="Attach Profile Picture"></v-file-input>
-          <v-text-field
-            label="Birthday"
-            v-model="birthday"
-            readonly
-          ></v-text-field>
-          <v-date-picker v-model="birthday"></v-date-picker>
+
+          <div class="date-container" style="display: flex">
+            <div class="date-modal">
+              <v-dialog v-model="dialog">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn icon v-bind="attrs" v-on="on">
+                    <v-icon medium class="date-icon"> mdi-calendar </v-icon>
+                  </v-btn>
+                </template>
+
+                <v-card class="text-center">
+                  <v-date-picker v-model="birthday"></v-date-picker>
+
+                  <v-divider></v-divider>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </div>
+            <v-text-field
+              label="Birthday"
+              v-model="birthday"
+              readonly
+            ></v-text-field>
+          </div>
+
           <v-checkbox
             :label="`Agree to Terms and Conditions`"
             v-model="agreeToTerms"
@@ -71,6 +93,7 @@ export default {
           "E-mail must be valid",
       ],
       formValidity: false,
+      dialog: false,
     };
   },
   methods: {
@@ -86,3 +109,13 @@ export default {
   },
 };
 </script>
+
+<style>
+.date-modal {
+  margin: 15px 1px 0 -5px !important;
+}
+.date-icon {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+</style>

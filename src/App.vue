@@ -4,6 +4,7 @@
       <v-toolbar-title>Vuetify Dashboard</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
+        class="mr-1"
         v-for="link in links"
         :key="`${link.label}-header-link`"
         text
@@ -12,7 +13,9 @@
       >
         {{ link.label }}
       </v-btn>
-      <font-awesome-icon id="toggle-icon" @click="toggleTheme" icon="adjust" />
+      <v-btn icon @click="toggleTheme">
+        <font-awesome-icon id="toggle-icon" icon="adjust" />
+      </v-btn>
     </v-app-bar>
     <v-main>
       <router-view></router-view>
